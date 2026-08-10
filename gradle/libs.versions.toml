@@ -1,0 +1,13 @@
+[versions]
+lombok = "1.18.46"
+jspecify = "1.0.1"
+spotless = "8.9.0"
+shadow = "9.6.1"
+
+[libraries]
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+jspecify = { module = "org.jspecify:jspecify", version.ref = "jspecify" }
+
+[plugins]
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
