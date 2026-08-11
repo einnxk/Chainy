@@ -162,7 +162,7 @@ public interface Chain<T> {
     @NonNull <R> Chain<List<R>> thenAll(@NonNull List<AsyncChainyFunction<T, R>> functions);
 
     /**
-     * Re-executes the whole chain from the start up to {@code maxAttempts}
+     * Re-executes the whole chain from the start-up to {@code maxAttempts}
      * times if a step throws, waiting {@code delay} between attempts.
      *
      * @param maxAttempts the total number of attempts, including the first
@@ -185,7 +185,7 @@ public interface Chain<T> {
 
     /**
      * Fails the chain if it has not completed within {@code duration},
-     * regardless of how many retry attempts remain.
+     * regardless of how many retry attempts to remain.
      *
      * @param duration the maximum duration the chain may take
      * @return the same chain, still producing {@code T}
