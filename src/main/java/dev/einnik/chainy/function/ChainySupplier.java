@@ -17,7 +17,7 @@ package dev.einnik.chainy.function;
 
 /**
  * A wrapped form of the {@link java.util.function.Supplier} functional interface, which allows
- * checked interfaces.
+ * checked exceptions.
  *
  * @param <T> the type of the parameter
  * @author EinNik

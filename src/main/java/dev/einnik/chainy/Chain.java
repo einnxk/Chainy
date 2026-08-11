@@ -47,7 +47,7 @@ public interface Chain<T> {
      * @return an instance of a {@link Chain} builder
      */
     static @NonNull <R> Chain<R> startWith(int stepCount, @NonNull ChainySupplier<R> supplier) {
-        return null;
+        return SimpleChain.init(stepCount, supplier);
     }
 
     /**
@@ -59,7 +59,7 @@ public interface Chain<T> {
      * @return an instance of a {@link Chain} builder
      */
     static @NonNull <R> Chain<R> startWithAsynchronously(int stepCount, @NonNull ChainySupplier<CompletableFuture<R>> supplier) {
-        return null;
+        return SimpleChain.initAsync(stepCount, supplier);
     }
 
     /**
@@ -187,7 +187,7 @@ public interface Chain<T> {
      * @param fallbackHandler the async handler that is invoked after all tries have failed
      * @return an instance of a {@link Chain} builder
      */
-    @NonNull Chain<T> onErrorFallback(AsynchronousFallbackHandler<T, T> fallbackHandler);
+    @NonNull Chain<T> onErrorFallbackAsync(AsynchronousFallbackHandler<T, T> fallbackHandler);
 
     /**
      * Register a callback that executes a step has failed and a new step is executed next.
