@@ -25,6 +25,6 @@ import org.jspecify.annotations.NonNull;
  * @since 1.0.0
  */
 @FunctionalInterface
-public interface StepFailureCallback extends Callback {
-  void callback(int stepCount, @NonNull Exception exception);
+public interface StepFailureCallback<T> extends Callback {
+  void callback(int stepCount, @NonNull T input, @NonNull Exception exception);
 }
