@@ -30,6 +30,7 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:6.0.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testImplementation("org.assertj:assertj-core:3.25.3")
 }
 
 tasks.test {
@@ -53,5 +54,17 @@ spotless {
     java {
         licenseHeaderFile(rootProject.file("config/license-header.txt"), "^(package|import|module) ")
         googleJavaFormat()
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.github.einnxk"
+            artifactId = "chainy"
+            version = version
+
+            artifact(tasks.shadowJar)
+        }
     }
 }
