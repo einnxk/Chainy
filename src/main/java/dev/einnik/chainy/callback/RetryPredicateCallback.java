@@ -25,5 +25,5 @@ import org.jspecify.annotations.NonNull;
  */
 @FunctionalInterface
 public interface RetryPredicateCallback extends Callback {
-  void callback(@NonNull Throwable cause);
+  boolean callback(@NonNull Throwable cause);
 }
